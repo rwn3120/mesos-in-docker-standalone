@@ -23,6 +23,7 @@ while [ "${STATUS}" == "RUNNING" ] || [ "${STATUS}" == "QUEUED" ];  do
 	MESSAGE=$(echo "${JSON}" | jq -r ".message")
     for i in $(seq $DOTS); do echo -n "."; done
     echo -en ".$STATUS\r"
+    DOTS=$(($DOTS+1))
 	sleep 1;
 done
 echo ". ${STATUS}"
