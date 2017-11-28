@@ -70,6 +70,16 @@ export STDERR_MARATHON="${MESOS_LOG_DIR}/marathon.stderr"
 marathon 1>"${STDOUT_MARATHON}" 2>"${STDERR_MARATHON}" &
 checkServicePid $!
 
+# Metronome
+out "Starting Metronome..."
+export METRONOME_LEADER_ELECTION_HOSTNAME="${HOST_IP}"
+export METRONOME_MESOS_MASTER_URL="${MESOS_HOSTNAME}:5050"
+export METRONOME_ZK_URL="zk://${MESOS_HOSTNAME}:2181/metronome"
+export STDOUT_METRONOME="${MESOS_LOG_DIR}/metronome.stdout"
+export STDERR_METRONOME="${MESOS_LOG_DIR}/metronome.stderr"
+"${METRONOME_HOME}/bin/metronome" 1>"${STDOUT_METRONOME}" 2>"${STDERR_METRONOME}" &
+checkServicePid $!
+
 # Spark dispatcher
 out "Starting Spark Dispatcher..."
 export SPARK_MESOS_DISPATCHER_HOST="${MESOS_HOSTNAME}"
