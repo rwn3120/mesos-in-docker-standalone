@@ -88,6 +88,11 @@ export STDERR_SPARK="${MESOS_LOG_DIR}/spark.stderr"
 "${SPARK_HOME}/sbin/start-mesos-dispatcher.sh" --master "mesos://${MESOS_HOSTNAME}:5050" 1>"${STDOUT_SPARK}" 2>"${STDERR_SPARK}"
 checkServicePid $(ps axf | grep spark | grep -v grep | awk '{print $1}' 2>/dev/null)
 
+# Redis
+Out "Starting Redis..."
+service redis-server start
+service redis-server status
+
 # set ready flag
 echo "1" > "/tmp/node.ready"
 
