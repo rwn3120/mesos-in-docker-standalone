@@ -1,7 +1,7 @@
 # Mesos cluster in one container
 Standalone version of [mesos-in-docker](https://github.com/rwn3120/mesos-in-docker).
 
-<script type="text/javascript" src="https://asciinema.org/a/jmaA105kP9jr58hsPmr4ZKX9C.js" id="asciicast-jmaA105kP9jr58hsPmr4ZKX9C" async></script>
+[![asciicast](https://asciinema.org/a/jmaA105kP9jr58hsPmr4ZKX9C.png)](https://asciinema.org/a/jmaA105kP9jr58hsPmr4ZKX9C)
 
 ## Try it!
 Copy & paste these commands to your terminal
